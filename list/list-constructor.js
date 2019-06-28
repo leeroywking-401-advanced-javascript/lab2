@@ -77,7 +77,7 @@ List.prototype.reduce = function (cb, strt) {
   return accum;
 };
 
-
+// this comment is superfluous 
 
 //this function changes the 'indexes' for every item in the 'array'
 
