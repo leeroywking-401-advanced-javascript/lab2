@@ -1,0 +1,26 @@
+{
+  "name": "lab2",
+  "version": "1.0.0",
+  "description": "lab2 classes",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leeroywking-401-advanced-javascript/lab2.git"
+  },
+  "author": "Lee-Roy King",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/leeroywking-401-advanced-javascript/lab2/issues"
+  },
+  "homepage": "https://github.com/leeroywking-401-advanced-javascript/lab2#readme",
+  "devDependencies": {
+    "eslint": "^6.0.1",
+    "jest": "^24.8.0"
+  }
+}
