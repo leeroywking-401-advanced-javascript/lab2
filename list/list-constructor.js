@@ -15,13 +15,8 @@ List.prototype.push = function(item) {
   this.length++;
 };
 
-/**
- * // Remove an item from the end of the list and return it's value
- * @returns {*}
- */
-
 List.prototype.pop = function() {
-  let returnValue = this.data[this.length];
+  let returnValue = this.data[this.length-1];
   delete this.data[this.length];
   this.length--;
   return returnValue;
@@ -43,9 +38,13 @@ List.prototype.shift = function() {
 }
 List.prototype.unshift = function(input){
   // re-indexes everything +1
-
+  for(let i = this.length; i<= 0; i--){
+    this.data[i] = this.data[i+1];
+  };
   // sets ${input}for this.data[0]
-  return this.length
+  this.data[0]= input;
+  this.length++;
+  return this.length;
 }
 List.prototype.forEach = function(){
 

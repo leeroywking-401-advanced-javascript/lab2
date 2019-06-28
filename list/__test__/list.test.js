@@ -22,13 +22,18 @@ describe('List Data Structure', () => {
     expect(stuff.data[1]).toEqual('b');
   });
 
+  it('pops things like you would think', () => {
+    let stuff = new List();
+    stuff.push('a');
+    stuff.push('b');
+    stuff.push('c');
+    expect(stuff.pop()).toEqual('c')
+  })
+
   it('shifts things the way you would hope it does', () =>{
     let stuff = new List();
-    stuff.push(2);
-    stuff.push(7);
-    stuff.push(2);
-    stuff.push(6);
-    stuff.push(5);
+    let arr = [2,7,2,6,5];
+    arr.forEach(item => stuff.push(item));
     expect(stuff.shift()).toEqual(2);
     expect(stuff.data).toEqual({0:7,1:2,2:6,3:5})
   })
@@ -39,5 +44,14 @@ describe('List Data Structure', () => {
     arr.forEach(item => stuff.push(item));
     expect(stuff.shift()).toEqual(arr.shift());
 
+  })
+
+  it('unshifts things EXACTLY like you would expect', () => {
+    let stuff = new List();
+    let arr = [faker.random.arrayElement(),faker.random.arrayElement(),faker.random.arrayElement(),faker.random.arrayElement(),faker.random.arrayElement()];
+    arr.forEach(item => stuff.push(item));
+    let newItem = faker.random.arrayElement()
+    expect(stuff.unshift(newItem)).toEqual(6);
+    expect(stuff.data[0]).toEqual(newItem);
   })
 });
