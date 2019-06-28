@@ -30,7 +30,7 @@ class List {
 
   forEach(cb) {
     for(let i =0 ; i < this.length ; i ++){
-      cb(this.data[i])
+      cb(this.data[i]);
     }
   }
 

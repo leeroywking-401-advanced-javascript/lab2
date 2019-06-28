@@ -21,7 +21,7 @@ class Car extends Vehicle{
 
 class Motorcycle extends Vehicle{
   constructor(name){
-    super(name,2)
+    super(name,2);
   }
   wheelie(){
     return 'Wheee!';
