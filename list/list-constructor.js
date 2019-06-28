@@ -28,7 +28,9 @@ List.prototype.pop = function() {
 };
 
 
-List.prototype.shift = function(){
+List.prototype.shift = function() {
+  // stores starting value
+  let bleep = this.data[0]
   // deletes the 0 index
   delete this.data[0];
   // re-indexes everything
@@ -36,7 +38,8 @@ List.prototype.shift = function(){
     this.data[i-1] = this.data[i] 
   }
   delete this.data[this.length-1]
-  return this.data[this.length]
+  this.length--
+  return bleep
 }
 List.prototype.unshift = function(input){
   // re-indexes everything +1
