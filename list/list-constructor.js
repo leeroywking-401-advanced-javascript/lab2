@@ -73,7 +73,7 @@ return response.data
 List.prototype.reduce = function(cb,strt){
   let accum = strt;
   for(let i = 0; i < this.length; i++){
-    cb((accum,this.data[i],i,this.data))
+    accum = cb(accum,this.data[i],i,this.data)
   };
   return accum;
 }

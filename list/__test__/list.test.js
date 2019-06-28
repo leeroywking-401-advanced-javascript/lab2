@@ -89,9 +89,9 @@ describe('List Data Structure', () => {
     },0);
     let stuff = new List();
     arr.forEach(item => stuff.push(item));
-    expect(stuff.reduce(((acc,val,idx,arr) => {
+    expect(stuff.reduce((acc,val,idx,arr) => {
       return acc+val
-    }), 0))
+    }, 0))
     .toEqual(reduced)
   })
 });
