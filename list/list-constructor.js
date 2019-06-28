@@ -40,8 +40,8 @@ List.prototype.unshift = function (input) {
   let newData = new List();
   newData.push(input);
   for (let i = 0; i < this.length; i++) {
-    newData.push(this.data[i])
-  };
+    newData.push(this.data[i]);
+  }
   this.data = newData.data;
   this.length++;
   return this.length;
