@@ -28,6 +28,12 @@ class List {
     return returnValue;
   }
 
+  forEach(cb) {
+    for(let i =0 ; i < this.length ; i ++){
+      cb(this.data[i])
+    }
+  }
+
 }
 
 module.exports = List;

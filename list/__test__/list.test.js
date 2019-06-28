@@ -54,4 +54,44 @@ describe('List Data Structure', () => {
     expect(stuff.unshift(newItem)).toEqual(6);
     expect(stuff.data[0]).toEqual(newItem);
   })
+
+  it('foreaches real good', () => {
+    let arr = [1,2,3,4,5];
+    let stuff = new List();
+    arr.forEach(item => stuff.push(item));
+    expect(stuff.forEach((item,idx) => (item,idx))).toEqual(arr.forEach((item,idx) => (item, idx)));
+  })
+
+  it('Maps like you want it to', () => {
+    let arr = [2,3,4,5,6,7,8,9,6,4,4];
+    let stuff = new List();
+    let chkList = new List();
+    arr.forEach(item => stuff.push(item));
+    let sqArr = arr.map(item => item * item);
+    sqArr.forEach(item => chkList.push(item));
+    expect(stuff.map(item => item* item)).toEqual(chkList.data)
+  })
+
+  it('Filters like you want it to', () => {
+    let arr = [1,2,3,4,54,5,6,7,8,89,5,100];
+    let filterArr = arr.filter(val => val % 2);
+    let stuff = new List();
+    let chkList = new List();
+    arr.forEach(item => stuff.push(item));
+    filterArr.forEach(item => chkList.push(item));
+    expect(stuff.filter(val => val%2)).toEqual(chkList.data)
+  })
+
+  it('Reduces things like a boss', () => {
+    let arr = [1,2,3,4,5,6,7,8,9,10];
+    let reduced = arr.reduce((acc,val,idx,arr) => {
+      return acc+val
+    },0);
+    let stuff = new List();
+    arr.forEach(item => stuff.push(item));
+    expect(stuff.reduce(((acc,val,idx,arr) => {
+      return acc+val
+    }), 0))
+    .toEqual(reduced)
+  })
 });

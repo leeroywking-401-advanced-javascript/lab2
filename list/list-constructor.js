@@ -22,7 +22,6 @@ List.prototype.pop = function() {
   return returnValue;
 };
 
-
 List.prototype.shift = function() {
   // stores starting value
   let bleep = this.data[0]
@@ -36,6 +35,7 @@ List.prototype.shift = function() {
   this.length--
   return bleep
 }
+
 List.prototype.unshift = function(input){
   // re-indexes everything +1
   for(let i = this.length; i<= 0; i--){
@@ -46,18 +46,38 @@ List.prototype.unshift = function(input){
   this.length++;
   return this.length;
 }
-List.prototype.forEach = function(){
+
+List.prototype.forEach = function(cb){
+  for(let i = 0; i< this.length; i ++){
+    cb(this.data[i], [i], this.data)
+  }
 
 }
-List.prototype.map = function(){
 
+List.prototype.map = function(cb){
+  let response = new List();
+  for(let i = 0; i < this.length; i++){
+    response.push(cb(this.data[i], i, this.data))
+  }
+  return response.data
 }
-List.prototype.filter = function(){
 
+List.prototype.filter = function(cb){
+let response = new List();
+for(let i = 0; i < this.length; i++){
+  if(cb(this.data[i],i,this.data)){response.push(this.data[i])}
 }
-List.prototype.reduce = function(){
+return response.data
+}
 
+List.prototype.reduce = function(cb,strt){
+  let accum = strt;
+  for(let i = 0; i < this.length; i++){
+    cb((accum,this.data[i],i,this.data))
+  };
+  return accum;
 }
+
 
 
 //this function changes the 'indexes' for every item in the 'array'
