@@ -31,8 +31,7 @@ List.prototype.shift = function () {
   for (let i = 1; i < this.length; i++) {
     this.data[i - 1] = this.data[i];
   }
-  delete this.data[this.length - 1];
-  this.length--;
+  delete this.data[--this.length];
   return bleep;
 };
 
