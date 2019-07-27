@@ -66,3 +66,4 @@ In the `objects/__tests__` folder, you'll find a file called `vehicle.test.js` t
 
 ### Assignment Submission Instructions
 Refer to the the [lab submission instructions](../../../reference/submission-instructions/labs/README.md) for the complete lab submission process and expectations
+  
